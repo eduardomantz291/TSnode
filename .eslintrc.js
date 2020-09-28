@@ -1,22 +1,22 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   env: {
-    browser: true,
+    node: true,
     es2021: true
   },
   plugins: ['@typescript-eslint'],
   extends: [
     'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
     'standard'
   ],
-  parser: '@typescript-eslint/parser',
+  globals: {
+    Atomics: 'readonly',
+    SharedArryBuffer: 'readonly'
+  },
   parserOptions: {
-    ecmaVersion: 12,
+    ecmaVersion: 2020,
     sourceType: 'module'
   },
-  plugins: [
-    '@typescript-eslint'
-  ],
-  rules: {
-  }
+  rules: {}
 }
